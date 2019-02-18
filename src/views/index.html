@@ -1,0 +1,13 @@
+<h3>body loaded</h3>
+
+<% if (attrs.styleTags) { %>
+    <% attrs.styleTags.forEach( function(attr) { %>
+        <p><%= attr %></p>
+    <% }); %>
+<% } %>
+
+<% if (attrs.scriptTags) { %>
+    <% attrs.scriptTags.forEach( function(attr) { %>
+        <p><%= attr %></p>
+    <% }); %>
+<% } %>
