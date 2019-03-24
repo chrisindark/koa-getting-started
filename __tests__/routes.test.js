@@ -17,7 +17,7 @@ describe('root route tests', () => {
     test('get home route GET /', async () => {
         const response = await request(server).get('/');
         expect(response.status).toEqual(200);
-        expect(response.text).toContain('hello world');
+        expect(response.text).toContain('Koa Tutorial');
     });
 });
 

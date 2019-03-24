@@ -1,14 +1,14 @@
-// app.js
+const fs = require('fs');
 const path = require('path');
 const Koa = require('koa');
 const Router = require('koa-router');
 const logger = require('koa-logger');
 const render = require('koa-ejs');
-
+const bodyparser = require('koa-bodyparser');
 
 const app = new Koa();
 app.use(logger());
-
+app.use(bodyparser());
 // app.use(async ctx => {
 //     ctx.body = 'hello world';
 // });
@@ -23,7 +23,7 @@ render(app, {
     layout: 'layout',
     viewExt: 'html',
     cache: false,
-    debug: true
+    debug: false
 });
 
 // error handling
@@ -67,5 +67,12 @@ app.use(postDetailRouter.allowedMethods());
 app.use(commentsRouter.routes());
 app.use(commentsRouter.allowedMethods());
 
-const server = app.listen(3000);
+const movieRoutes = require('./routes/movies');
+app.use(movieRoutes.routes());
+
+const PORT = 8000;
+const server = app.listen(PORT, () => {
+    console.log(`Server listening on port: ${PORT}`);
+});
+
 module.exports = server;

@@ -5,20 +5,31 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --watchAll",
-    "dev": "nodemon ."
+    "start": "node ./index.js",
+    "devstart": "npx nodemon ./index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "knex": "^0.16.3",
     "koa": "^2.7.0",
+    "koa-bodyparser": "^4.2.1",
     "koa-ejs": "^4.2.0",
     "koa-logger": "^3.2.0",
+    "koa-passport": "^4.1.1",
     "koa-router": "^7.4.0",
+    "mysql2": "^1.6.5",
+    "sqlite3": "^4.0.6",
     "superagent": "^4.1.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/plugin-transform-async-to-generator": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "@babel/register": "^7.4.0",
     "jest": "^24.1.0",
+    "nodemon": "^1.18.10",
     "supertest": "^3.4.2"
   }
 }
